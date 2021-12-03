@@ -1,4 +1,26 @@
 const Header = (title, date, temp) => {
+
+  const headerNode = document.createElement("div");
+  const dateNode = document.createElement("span");
+  const titleNode = document.createElement("h1");
+  const tempNode = document.createElement("span");
+
+  headerNode.classList.add("header");
+  dateNode.classList.add("date");
+  tempNode.classList.add("temp");
+
+  dateNode.textContent = date;
+  titleNode.textContent = title;
+  tempNode.textContent = temp;
+
+
+  headerNode.appendChild(dateNode);
+  headerNode.appendChild(titleNode);
+  headerNode.appendChild(tempNode);
+
+  return headerNode
+};
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -11,9 +33,16 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
+
 
 const headerAppender = (selector) => {
+
+  const parentElement = document.querySelector(selector);
+  const HeaderElement = Header('Bloom Times', Date.now(), '26"');
+
+
+  parentElement.appendChild(HeaderElement);
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
