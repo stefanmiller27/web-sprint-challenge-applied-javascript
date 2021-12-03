@@ -36,7 +36,7 @@ const Card = (article) => {
   headlineNode.classList.add("headline");
   authorContainerNode.classList.add("author");
   imgContainerNode.classList.add("img-container");
-
+  
   headlineNode.textContent = article.headline;
   imgNode.src = article.authorPhoto;
   authorNode.textContent = article.authorName;
@@ -74,6 +74,7 @@ const cardAppender = (selector) => {
   .catch((err) => {
     console.error(err);
   });
+
 
 }
 
