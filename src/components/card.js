@@ -29,7 +29,7 @@ const Card = (article) => {
 
   cardNode.appendChild(headlineNode);
   cardNode.appendChild(authorContainerNode);
-  cardNode.appendChild(imgContainerNode);
+  authorContainerNode.appendChild(imgContainerNode);
   imgContainerNode.appendChild(imgNode);
 
   cardNode.classList.add("card");
@@ -40,7 +40,9 @@ const Card = (article) => {
   headlineNode.textContent = article.headline;
   imgNode.src = article.authorPhoto;
   authorNode.textContent = article.authorName;
-  imgContainerNode.appendChild(authorNode);
+  authorContainerNode.appendChild(authorNode);
+
+  //dont understand why my test aren't passing for 8 and 9 I feel I'm returning the correct author and image accordingly.
 
   cardNode.addEventListener(
     "click",
